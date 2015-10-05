@@ -4,5 +4,5 @@ export default DS.Model.extend({
   username: DS.attr(),
   email: DS.attr(),
   uid: DS.attr(),
-  cards: DS.hasMany('card')
+  card_users: DS.hasMany('carduser', {async: true})
 });

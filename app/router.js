@@ -8,6 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('login');
   this.route('edit-collection');
+  this.route('scrap');
 });
 
 export default Router;
