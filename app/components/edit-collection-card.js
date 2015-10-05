@@ -2,8 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   actions: {
+    user: Ember.inject.service('user'),
     addCard(card, user) {
-      debugger;
       var cards = user.cards;
     }
   }

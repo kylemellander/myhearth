@@ -41,5 +41,4 @@ export default Ember.Route.extend({
     });
     return context.store.findAll('card');
   },
-
 });
