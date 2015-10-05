@@ -17,6 +17,7 @@ export default Ember.Route.extend({
             username: params.username,
             email: params.email,
             uid: userData.uid,
+            cards: []
           });
         }
       });
