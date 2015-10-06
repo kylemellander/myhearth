@@ -1,10 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-3">
-      <h3>All Cards</h3>
-      {{#each model.cards as |card|}}
-        {{edit-collection-card session=session card=card join=model.user.card_users addCard="addCard"}}
-      {{/each}}
+      {{card-list session=session cards=model.cards user=model.user addCard="addCard"}}
     </div>
     <div class="col-sm-9">
       <h3>My Collection</h3>

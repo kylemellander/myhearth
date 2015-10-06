@@ -1,0 +1,7 @@
+<h3>All Cards</h3>
+<p>Sort by: <a {{action 'all'}}>All</a> <a {{action 'class'}}>Class</a> <a {{action 'rarity'}}>Rarity</a> <a {{action 'set'}}>Set</a></p>
+{{#if allCards}}
+  {{card-list-all session=session cards=sortedCards user=user addCard="addCard"}}
+{{else if classCards}}
+  {{card-list-by-class session=session cards=sortedCards user=user addCard="addCard"}}
+{{/if}}
