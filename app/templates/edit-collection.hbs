@@ -1,12 +1,14 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-3">
+      <h3>All Cards</h3>
       {{#each model.cards as |card|}}
-        {{edit-collection-card session=session card=card join=model.join addCard="addCard"}}
+        {{edit-collection-card session=session card=card join=model.user.card_users addCard="addCard"}}
       {{/each}}
     </div>
     <div class="col-sm-9">
-      {{my-collection-display session=session join=model.join}}
+      <h3>My Collection</h3>
+      {{my-collection-display session=session join=model.user.card_users addCard="addCard"}}
     </div>
   </div>
 </div>

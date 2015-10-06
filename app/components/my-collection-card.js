@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['add-cards'],
+  classNames: ['collection-card'],
   click: function(e) {
     if (e.which === 1) {
       var card = this.get('card');
@@ -20,15 +20,4 @@ export default Ember.Component.extend({
       this.sendAction('addCard', card, user, join, count);
     }
   },
-  mouseMove: function(e) {
-    this.$('.img-container').append('<img src="'+this.get('card').get('img')+'">')
-    this.$('.hover-image img').stop(1,1).fadeIn();
-    this.$('.hover-image img').offset({
-      top: e.pageY + 10,
-      left: e.pageX + 10
-    });
-  },
-  mouseLeave: function() {
-    this.$('.img-container').empty();
-  }
 });

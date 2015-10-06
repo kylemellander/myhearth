@@ -1,7 +1,31 @@
 a {
   cursor:pointer;
 }
+a:hover {
+  cursor: pointer;
+}
+a.Common{
+  color: #0faf03
+}
+a.Rare {
+  color: #198eff;
+}
+a.Epic {
+  color: #ab48ee;
+}
+a.Legendary {
+  color: #f07000;
+}
+a.Free {
+  color: #4b4b4b;
+}
 .hover-image img{
   display:none;
   white-space: nowrap;
+  position:absolute;
+  width: 140px;
+  height: auto;
+}
+.collection-card {
+  text-align:center;
 }
