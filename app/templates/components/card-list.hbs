@@ -6,4 +6,6 @@
   {{card-list-by-class session=session cards=sortedCards user=user addCard="addCard"}}
 {{else if rarityCards}}
   {{card-list-by-rarity session=session cards=sortedCards user=user addCard="addCard"}}
+{{else if setCards}}
+  {{card-list-by-set session=session cards=sortedCards user=user addCard="addCard"}}
 {{/if}}

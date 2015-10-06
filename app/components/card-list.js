@@ -6,6 +6,7 @@ export default Ember.Component.extend({
   allCards: true,
   classCards: false,
   rarityCards: false,
+  setCards: false,
   actions: {
     addCard(card, user, join, count) {
       this.sendAction('addCard', card, user, join, count);
@@ -21,6 +22,12 @@ export default Ember.Component.extend({
       this.set('allCards', false);
       this.set('classCards', false);
       this.set('rarityCards', true);
+    },
+    set() {
+      this.set('allCards', false);
+      this.set('classCards', false);
+      this.set('rarityCards', false);
+      this.set('setCards', true);
     }
   }
 });

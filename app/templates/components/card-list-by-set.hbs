@@ -1,0 +1,4 @@
+<a {{action 'setSet' 'The Grand Tournament'}}>TGT</a> <a {{action 'setSet' 'Blackrock Mountain'}}>BRM</a> <a {{action 'setSet' 'Classic'}}>Classic</a> <a {{action 'setSet' 'Naxxramas'}}>Naxx</a> <a {{action 'setSet' 'Goblins vs Gnomes'}}>GVG</a>
+{{#each filteredCards as |card|}}
+  {{edit-collection-card session=session card=card join=user.card_users addCard="addCard"}}
+{{/each}}
