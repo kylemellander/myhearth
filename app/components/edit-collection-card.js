@@ -20,10 +20,14 @@ export default Ember.Component.extend({
       this.sendAction('addCard', card, user, join, count);
     }
   },
-  actions: {
-    addCard(user, join) {
-      var card = this.get('card');
-      this.sendAction('addCard', card, user, join);
-    }
+  mouseMove: function(e) {
+    this.$('.hover-image img').stop(1,1).show();
+    this.$('.hover-image img').offset({
+      top: e.pageY - this.$('.hover-image img').outerHeight(),
+      left: e.pageX - (this.$('.hover-image img').outerWidth()/2)
+    });
+  },
+  mouseLeave: function() {
+    this.$('.hover-image img').hide();
   }
 });
