@@ -23,11 +23,33 @@ export default Ember.Component.extend({
   mouseMove: function(e) {
     this.$('.hover-image img').stop(1,1).show();
     this.$('.hover-image img').offset({
-      top: e.pageY - this.$('.hover-image img').outerHeight(),
-      left: e.pageX - (this.$('.hover-image img').outerWidth()/2)
+      top: e.pageY + 20,
+      left: e.pageX + 10
     });
   },
   mouseLeave: function() {
     this.$('.hover-image img').hide();
   }
 });
+
+// To Be Worked in
+// $(document).ready(function() {
+//     $('.hover-text').mousemove(function(e) {
+//         $img = $("#" + $(this).data('image-id'))
+//         $img.stop(1, 1).show();
+//         $img.offset({
+//             top: e.pageY + 20,
+//             left: e.pageX + 10
+//         });
+//     }).mouseleave(function() {
+//         $img = $("#" + $(this).data('image-id'))
+//         $img.hide();
+//     });
+// });
+
+// <img id="cursor" src="http://i.imgur.com/6BfvqZd.jpg" class="mouse-hovered">
+// <span class="hover-text" data-image-id="cursor">hover me</a>
+// img.mouse-hovered {
+//     display:none;
+//     position: absolute;
+// }
