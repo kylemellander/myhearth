@@ -1,3 +1,10 @@
-{{#each join as |joinItem|}}
-  {{joinItem.card.name}} - {{joinItem.count}}
-{{/each}}
+<div class="container">
+  <div class="row">
+    {{#each join as |joinItem|}}
+      <div style="text-align: center;" class="col-sm-2">
+        <img src="{{joinItem.card.img}}" class="img-responsive">
+        <div>{{joinItem.count}}</div>
+      </div>
+    {{/each}}
+  </div>
+</div>

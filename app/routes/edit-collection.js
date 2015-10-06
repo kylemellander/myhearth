@@ -8,19 +8,19 @@ export default Ember.Route.extend({
     });
   },
   actions: {
-    addCard(card, user, join) {
+    addCard(card, user, join, count) {
       var found = false;
       var newCardUser;
       join.forEach(function(joinItem) {
         if(joinItem.get('card').get('id') === card.id) {
           newCardUser = joinItem;
-          var newCount = newCardUser.get('count') + 1;
+          var newCount = newCardUser.get('count') + count;
           newCardUser.set('count', newCount);
           found = true;
         }
       });
       if (found === false) {
-        var cardUserParams = {card: card, user: user, count: 1};
+        var cardUserParams = {card: card, user: user, count: count};
         newCardUser = this.store.createRecord('carduser', cardUserParams);
       }
       if (newCardUser.get('count') < 3 && newCardUser.get('count') > 0) {
