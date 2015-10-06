@@ -23,13 +23,17 @@ export default Ember.Route.extend({
         var cardUserParams = {card: card, user: user, count: 1};
         var newCardUser = this.store.createRecord('carduser', cardUserParams);
       }
-      newCardUser.save().then(function() {
-        card.get('card_users').addObject(newCardUser);
-        user.get('card_users').addObject(newCardUser);
-        card.save().then(function() {
-          user.save();
+      if (newCardUser.get('count') < 2) {
+        newCardUser.save().then(function() {
+          card.get('card_users').addObject(newCardUser);
+          user.get('card_users').addObject(newCardUser);
+          card.save().then(function() {
+            user.save();
+          })
         })
-      })
+      } else {
+        newCardUser.destroyRecord();
+      }
     }
   }
 });
