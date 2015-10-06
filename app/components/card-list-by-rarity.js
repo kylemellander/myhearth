@@ -13,5 +13,4 @@ export default Ember.Component.extend({
       this.sendAction('addCard', card, user, join, count);
     }
   }
-
 });
