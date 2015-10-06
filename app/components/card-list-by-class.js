@@ -1,13 +1,13 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  class: "",
-  filteredCards: Ember.computed('class', function() {
-    return this.get('cards').filterBy('playerClass', this.get('class'));
+  classSort: "",
+  filteredCards: Ember.computed('classSort', function() {
+    return this.get('cards').filterBy('playerClass', this.get('classSort'));
   }),
   actions: {
     setClass(str) {
-      this.set('class', str);
+      this.set('classSort', str);
     },
     addCard(card, user, join, count) {
       this.sendAction('addCard', card, user, join, count);

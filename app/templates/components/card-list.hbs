@@ -1,9 +1,9 @@
 <h3>All Cards</h3>
 <p>Sort by: <a {{action 'all'}}>All</a> <a {{action 'class'}}>Class</a> <a {{action 'rarity'}}>Rarity</a> <a {{action 'set'}}>Set</a> <a {{action 'cost'}}>Cost</a></p>
-{{#if allCards}}
-  {{card-list-all session=session cards=sortedCards user=user addCard="addCard"}}
-{{else if classCards}}
+{{#if classCards}}
   {{card-list-by-class session=session cards=sortedCards user=user addCard="addCard"}}
+{{else if allCards}}
+  {{card-list-all session=session cards=sortedCards user=user addCard="addCard"}}
 {{else if rarityCards}}
   {{card-list-by-rarity session=session cards=sortedCards user=user addCard="addCard"}}
 {{else if setCards}}
