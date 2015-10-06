@@ -1,3 +1,8 @@
+{{#if session.isAuthenticated}}
+Logged in as {{model.username}}
+<button {{action "signOut"}}>Sign out</button>
+{{else}}
+{{#link-to 'login'}}Sign in with Twitter{{/link-to}}
+{{/if}}
 <h2 id="title">Welcome to Ember</h2>
-
 {{outlet}}
