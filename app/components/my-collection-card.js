@@ -4,7 +4,7 @@ export default Ember.Component.extend({
   classNames: ['collection-card'],
   click: function(e) {
     if (e.which === 1) {
-      var card = this.get('card');
+      var card = this.get('joinItem').get('card');
       var user = this.get('session').get('user');
       var join = this.get('join');
       var count = 1;
@@ -13,7 +13,7 @@ export default Ember.Component.extend({
   },
   mouseDown: function(e) {
     if (e.which === 3) {
-      var card = this.get('card');
+      var card = this.get('joinItem').get('card');
       var user = this.get('session').get('user');
       var join = this.get('join');
       var count = -1;

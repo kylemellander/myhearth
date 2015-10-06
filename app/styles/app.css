@@ -1,7 +1,4 @@
-a {
-  cursor:pointer;
-}
-a:hover {
+a:hover, .collection-card:hover {
   cursor: pointer;
 }
 a.Common{

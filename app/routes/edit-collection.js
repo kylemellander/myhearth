@@ -12,34 +12,29 @@ export default Ember.Route.extend({
     addCard(card, user, join, count) {
       var found = false;
       var newCardUser;
-      var self = this;
-      this.store.findAll('carduser').then(function(join) {
-        join.forEach(function(joinItem) {
-          if(joinItem.get('card').get('id') === card.id) {
-            newCardUser = joinItem;
-            var newCount = newCardUser.get('count') + count;
-            if(newCount <= 2) {
-              newCardUser.set('count', newCount);
-            }
-            found = true;
+      join.forEach(function(joinItem) {
+        if(joinItem.get('card').get('id') === card.get('id')) {
+          newCardUser = joinItem;
+          var newCount = newCardUser.get('count') + count;
+          if(card.get('rarity') === "Legendary" && newCount > 1) {} else if(newCount <= 2) {
+            newCardUser.set('count', newCount);
           }
-        });
-        if (found === false) {
-          var cardUserParams = {card: card, user: user, count: count};
-          newCardUser = self.store.createRecord('carduser', cardUserParams);
-        }
-        if (newCardUser.get('count') < 3 && newCardUser.get('count') > 0) {
-          newCardUser.save().then(function() {
-            card.get('card_users').addObject(newCardUser);
-            user.get('card_users').addObject(newCardUser);
-            card.save().then(function() {
-              user.save();
-            });
-          });
-        } else {
-          newCardUser.destroyRecord();
+          found = true;
         }
       });
+      if (found === false) {
+        var cardUserParams = {card: card, user: user, count: count};
+        newCardUser = this.store.createRecord('carduser', cardUserParams);
+      }
+      if (newCardUser.get('count') < 3 && newCardUser.get('count') > 0) {
+        newCardUser.save().then(function() {
+          card.get('card_users').addObject(newCardUser);
+          user.get('card_users').addObject(newCardUser);
+          user.save();
+        });
+      } else {
+        newCardUser.destroyRecord();
+      }
     }
   }
 });

@@ -7,7 +7,7 @@ module.exports = function(environment) {
     contentSecurityPolicy: { 'connect-src': "'self' https://auth.firebase.com wss://*.firebaseio.com",
                              'img-src': "'self' http://wow.zamimg.com",
                              'style-src': "'self' 'unsafe-inline'",
-                             'script-src': "'self' 'unsafe-eval'"
+                             'script-src': "'self' 'unsafe-eval' 'unsafe-inline'"
                            },
     firebase: 'https://my-hearth.firebaseio.com/',
     torii: {
