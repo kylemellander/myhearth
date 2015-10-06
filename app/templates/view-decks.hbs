@@ -1,0 +1,4 @@
+{{#each model as |decklink|}}
+  <div><a href="{{decklink.url}}">{{{decklink.name}}}</a> - {{decklink.class}}</div>
+{{/each}}
+<a {{action 'test' model}}>test</a>

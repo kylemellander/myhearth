@@ -1,8 +1,13 @@
+<h2 id="title">My Hearth</h2>
 {{#if session.isAuthenticated}}
-Logged in as {{model.username}}
-<button {{action "signOut"}}>Sign out</button>
+  Logged in as {{model.username}}
+  <button {{action "signOut"}}>Sign out</button>
+  <ul>
+    <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+    <li>{{#link-to 'edit-collection'}}Your Collection{{/link-to}}</li>
+    <li>{{#link-to 'view-decks'}}View Popular Decks{{/link-to}}</li>
+  </ul>
 {{else}}
-{{#link-to 'login'}}Sign in with Twitter{{/link-to}}
+  {{#link-to 'login'}}Sign in with Twitter{{/link-to}}
 {{/if}}
-<h2 id="title">Welcome to Ember</h2>
 {{outlet}}
