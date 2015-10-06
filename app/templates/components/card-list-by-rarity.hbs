@@ -1,0 +1,4 @@
+<a {{action 'setRarity' 'Free'}}>Basic</a> <a {{action 'setRarity' 'Common'}}>Common</a> <a {{action 'setRarity' 'Rare'}}>Rare</a> <a {{action 'setRarity' 'Epic'}}>Epic</a> <a {{action 'setRarity' 'Legendary'}}>Legendary</a>
+{{#each filteredCards as |card|}}
+  {{edit-collection-card session=session card=card join=user.card_users addCard="addCard"}}
+{{/each}}
