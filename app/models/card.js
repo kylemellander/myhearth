@@ -8,6 +8,6 @@ export default DS.Model.extend({
   playerClass: DS.attr(),
   type: DS.attr(),
   img: DS.attr(),
-  // card_users: DS.hasMany('carduser', {async: true}),
-  // carddecks: DS.hasMany('carddeck', {async:true})
+  card_users: DS.hasMany('carduser', {async: true}),
+  carddecks: DS.hasMany('carddeck', {async:true})
 });

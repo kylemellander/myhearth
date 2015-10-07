@@ -1,7 +1,4 @@
-{{#each model.decks as |deck|}}
+{{#each model as |deck|}}
   {{deck-load deck=deck}}
 {{/each}}
 <a {{action 'test' model}}>test</a>
-{{#each model.cards as |card|}}
-  {{card.name}}
-{{/each}}
