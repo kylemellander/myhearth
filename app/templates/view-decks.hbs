@@ -1,4 +1,7 @@
-{{#each model as |decklink|}}
-  <div><a href="{{decklink.url}}">{{{decklink.name}}}</a> - {{decklink.class}}</div>
+{{#each model.decks as |deck|}}
+  {{deck-load deck=deck}}
 {{/each}}
 <a {{action 'test' model}}>test</a>
+{{#each model.cards as |card|}}
+  {{card.name}}
+{{/each}}
