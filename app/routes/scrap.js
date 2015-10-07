@@ -24,7 +24,8 @@ export default Ember.Route.extend({
                     rarity: response[key][prop].rarity,
                     cost: response[key][prop].cost,
                     playerClass: response[key][prop].playerClass || "",
-                    img: response[key][prop].img
+                    img: response[key][prop].img,
+                    type: response[key][prop].type,
                   };
                   var newCard = context.store.createRecord('card', params);
                   newCard.save();

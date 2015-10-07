@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  sortedCardsOrder: ['cost', 'name'],
+  sortedCardsOrder: ['cost', 'type:desc', 'name'],
   sortedCards: Ember.computed.sort('cards', 'sortedCardsOrder'),
   allCards: true,
   classCards: false,
