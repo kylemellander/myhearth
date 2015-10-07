@@ -22,7 +22,7 @@ export default Ember.Route.extend({
       var tr = remoteDeck.responseJSON.query.results.results.tr;
       for(var k in tr) {
         if(tr.hasOwnProperty(k)) {
-          var count = tr[k].td[1].content;
+          var count = tr[k].td[0].content.replace(/[ ↵×]/gi, '');
           var cardName = tr[k].td[0].b.a.content.replace("&#27;", "'");
           var card = hash.cards.findBy('name', cardName);
           var cardDeckParams = {card: card, deck: hash.deck, count: count};

@@ -1,2 +1,6 @@
-{{model.deck.name}}
-<a {{action 'test' model}}>Test</a>
+<h3>{{model.deck.name}}</h3>
+<ul>
+  {{#each model.deck.carddecks as |join|}}
+    {{card-in-deck join=join session=session}}
+  {{/each}}
+</ul>
