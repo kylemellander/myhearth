@@ -21,13 +21,14 @@ export default Ember.Component.extend({
     }
   },
   mouseMove: function(e) {
-    this.$('.hover-image img').stop(1,1).show();
+    this.$('.img-container').append('<img src="'+this.get('card').get('img')+'">')
+    this.$('.hover-image img').stop(1,1).fadeIn();
     this.$('.hover-image img').offset({
-      top: e.pageY + 20,
+      top: e.pageY + 10,
       left: e.pageX + 10
     });
   },
   mouseLeave: function() {
-    this.$('.hover-image img').hide();
+    this.$('.img-container').empty();
   }
 });
