@@ -1,13 +1,38 @@
-<h2 id="title">My Hearth</h2>
+<h2 id="title"><img src="http://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/d/d4/Hearthstone_logo.png/350px-Hearthstone_logo.png?version=5853808a0ad41c9fccacef7bc3021e27" alt="" /></h2>
+
 {{#if session.isAuthenticated}}
-  Logged in as {{model.username}}
+  <h4>Logged in as {{model.username}}</h4>
   <button {{action "signOut"}}>Sign out</button>
-  <ul>
-    <li>{{#link-to 'index'}}Home{{/link-to}}</li>
-    <li>{{#link-to 'edit-collection'}}Your Collection{{/link-to}}</li>
-    <li>{{#link-to 'view-decks'}}View Popular Decks{{/link-to}}</li>
-  </ul>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>{{#link-to 'index'}}Home{{/link-to}}</li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>{{#link-to 'edit-collection'}}Your Collection{{/link-to}}</li>
+        <li>{{#link-to 'view-decks'}}View Popular Decks{{/link-to}}</li>
+        <li>{{#link-to 'login'}}Sign in with Twitter{{/link-to}}</li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
 {{else}}
   {{#link-to 'login'}}Sign in with Twitter{{/link-to}}
 {{/if}}
+
 {{outlet}}
