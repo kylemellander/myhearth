@@ -1,9 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-3" id="cardlist">
       {{card-list session=session cards=model.cards user=model.user addCard="addCard"}}
     </div>
-    <div class="col-sm-9">
+    <div class="col-sm-9" id="mycollection">
       <h3>My Collection</h3>
       {{cards-you-have session=session join=model.user.card_users}}
       {{my-collection-display session=session join=model.user.card_users cardusers=model.cardusers cards=model.cards user=model.user addCard="addCard"}}
