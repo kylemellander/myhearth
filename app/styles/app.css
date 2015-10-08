@@ -64,15 +64,14 @@ p{
 
 
 #cardlist {
-  background-color: rgba(64, 64, 64, 0.9);
-  margin: 1%;
-  width: 28%;
+  background-color: rgba(80, 80, 80, 0.7);
 }
 
 #mycollection {
-  background-color: rgba(64, 64, 64, 0.9);
-  width: 62%;
-  margin: 1%;
+  background-color: rgba(64, 64, 64, 0.5);
+}
+#mycollection a {
+  color: #fff;
 }
 
 #signin {
@@ -161,4 +160,13 @@ p{
 #index-image {
   width: 50%;
   margin: 0 auto;
+
+.active {
+  color:#E6CC80 !important;
+  font-weight: bold;
+}
+.active:hover {
+  text-decoration: none;
+  color:#E6CC80;
+  cursor: default;
 }
