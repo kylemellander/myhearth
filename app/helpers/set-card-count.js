@@ -2,15 +2,12 @@ import Ember from 'ember';
 
 export function setCardCount(params/*, hash*/) {
   var cardUsers = params[0].get('content').user.get('card_users');
-  var cardCount = 0;
-  for(var key in cardUsers) {
-    if(cardUsers.hasOwnProperty(key)) {
-      cardCount += cardUsers[key].get('count');
-      debugger;
-    }
+  var counts = cardUsers.getEach('count');
+  var sum = counts.reduce(add, 0);
+  function add(a, b) {
+      return a + b;
   }
-  debugger;
-  return cardCount;
+  return sum;
 }
 
 export default Ember.Helper.helper(setCardCount);
