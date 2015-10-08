@@ -31,14 +31,19 @@ export default Ember.Route.extend({
       }
       if (newCardUser.get('count') < 3 && newCardUser.get('count') > 0) {
         newCardUser.save().then(function() {
-          card.get('card_users').addObject(newCardUser);
           user.get('card_users').addObject(newCardUser);
-          user.save();
+          user.save().then(function() {
+            card.get('card_users').addObject(newCardUser);
+            card.save();
+          })
         });
       } else {
-        newCardUser.destroyRecord().then(function(){
-          card.save();
+        card.get('card_users').removeObject(newCardUser);
+        card.save().then(function() {
+          user.get('card_users').removeObject(newCardUser);
           user.save();
+        }).then(function() {
+          newCardUser.destroyRecord();
         });
       }
     }

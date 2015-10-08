@@ -1,7 +1,7 @@
 <h2 id="title"><img src="http://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/d/d4/Hearthstone_logo.png/350px-Hearthstone_logo.png?version=5853808a0ad41c9fccacef7bc3021e27" alt="" /></h2>
 
 {{#if session.isAuthenticated}}
-  <h4>Logged in as {{model.username}}</h4>
+  <h4>Logged in as {{model.user.username}}</h4>
   <button {{action "signOut"}}>Sign out</button>
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
