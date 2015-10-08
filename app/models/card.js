@@ -9,5 +9,5 @@ export default DS.Model.extend({
   type: DS.attr(),
   img: DS.attr(),
   card_users: DS.hasMany('carduser', {async: true}),
-  carddecks: DS.hasMany('carddeck', {async:true})
+  carddecks: DS.hasMany('carddeck', {async: true})
 });

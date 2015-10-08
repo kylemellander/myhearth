@@ -10,6 +10,7 @@ Router.map(function() {
   this.route('edit-collection');
   this.route('scrap');
   this.route('view-decks', {});
+  this.route('deck', {path: '/deck/:deck_id'});
 });
 
 export default Router;

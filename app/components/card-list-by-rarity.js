@@ -9,8 +9,8 @@ export default Ember.Component.extend({
     setRarity(str) {
       this.set('rarity', str);
     },
-    addCard(card, user, join, count) {
-      this.sendAction('addCard', card, user, join, count);
+    addCard(card, user, count) {
+      this.sendAction('addCard', card, user, count);
     }
   }
 });

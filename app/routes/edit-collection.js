@@ -5,22 +5,25 @@ export default Ember.Route.extend({
     var user = this.get('session').get('content').user;
     return Ember.RSVP.hash({
       cards: this.store.findAll('card'),
-      user: user
+      user: user,
+      cardusers: this.get('cardusers')
     });
   },
   actions: {
-    addCard(card, user, join, count) {
-      var found = false;
+    addCard(card, user, count) {
       var newCardUser;
-      join.forEach(function(joinItem) {
-        if(joinItem.get('card').get('id') === card.get('id')) {
-          newCardUser = joinItem;
-          var newCount = newCardUser.get('count') + count;
-          if(card.get('rarity') === "Legendary" && newCount > 1) {} else if(newCount <= 2) {
-            newCardUser.set('count', newCount);
+      var found = false;
+      user.get('card_users').forEach(function(userJoin) {
+        card.get('card_users').forEach(function(cardJoin) {
+          if(userJoin === cardJoin) {
+            newCardUser = userJoin;
+            var newCount = newCardUser.get('count') + count;
+            if(card.get('rarity') === "Legendary" && newCount > 1) {} else if(newCount <= 2) {
+              newCardUser.set('count', newCount);
+            }
+            found = true;
           }
-          found = true;
-        }
+        });
       });
       if (found === false) {
         var cardUserParams = {card: card, user: user, count: count};
@@ -33,7 +36,10 @@ export default Ember.Route.extend({
           user.save();
         });
       } else {
-        newCardUser.destroyRecord();
+        newCardUser.destroyRecord().then(function(){
+          card.save();
+          user.save();
+        });
       }
     }
   }

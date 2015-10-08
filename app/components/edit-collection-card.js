@@ -2,32 +2,28 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   classNames: ['add-cards'],
-  click: function(e) {
-    if (e.which === 1) {
-      var card = this.get('card');
-      var user = this.get('session').get('user');
-      var join = this.get('join');
-      var count = 1;
-      this.sendAction('addCard', card, user, join, count);
-    }
+  click: function() {
+    var card = this.get('card');
+    var user = this.get('session').get('user');
+    var count = 1;
+    this.sendAction('addCard', card, user, count);
   },
-  mouseDown: function(e) {
-    if (e.which === 3) {
+  contextMenu: function() {
       var card = this.get('card');
       var user = this.get('session').get('user');
-      var join = this.get('join');
       var count = -1;
-      this.sendAction('addCard', card, user, join, count);
-    }
+      this.sendAction('addCard', card, user, count);
+      return false;
   },
   mouseMove: function(e) {
-    this.$('.hover-image img').stop(1,1).show();
+    this.$('.img-container').append('<img src="'+this.get('card').get('img')+'">')
+    this.$('.hover-image img').stop(1,1).fadeIn();
     this.$('.hover-image img').offset({
-      top: e.pageY + 20,
+      top: e.pageY + 10,
       left: e.pageX + 10
     });
   },
   mouseLeave: function() {
-    this.$('.hover-image img').hide();
+    this.$('.img-container').empty();
   }
 });
