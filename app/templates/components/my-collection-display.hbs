@@ -6,9 +6,18 @@
 {{else}}
 <div class="container-fluid">
   <div class="row">
-    {{#each join as |joinItem|}}
-      {{my-collection-card addCard="addCard" join=join joinItem=joinItem session=session card=joinItem.card}}
+    <form id="cardSearchField" role="search">
+      <div class="form-group">
+        {{input value=cardSearch}}
+      </div>
+    </form>
+
+    {{#each filteredCards as |card|}}
+      {{my-collection-card addCard="addCard" join=join joinItem=joinItem session=session card=card}}
     {{/each}}
+    <!-- {{#each join as |joinItem|}}
+      {{my-collection-card addCard="addCard" join=join joinItem=joinItem session=session card=joinItem.card}}
+    {{/each}} -->
   </div>
 </div>
 {{/if}}

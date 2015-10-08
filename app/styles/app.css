@@ -59,3 +59,9 @@ h3 {
 p{
   color:#d3d3d3;
 }
+
+#cardSearchField {
+  width:20%;
+  float:left;
+
+}
