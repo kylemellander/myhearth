@@ -63,9 +63,18 @@ export default Ember.Component.extend({
     },
     setCardSet(str) {
       this.set('cardSet', str);
+      $(".set-link").click(function () {
+        $(".set-link").removeClass("active");
+        $(this).addClass("active");
+      });
     },
-    setCardClass(str2) {
-      this.set('cardClass', str2);
+    setCardClass(str) {
+      this.set('cardClass', str);
+      $(".class-link").click(function () {
+        $(".class-link").removeClass("active");
+        // $(".tab").addClass("active"); // instead of this do the below
+        $(this).addClass("active");
+      });
     }
   }
 });

@@ -82,3 +82,12 @@ p{
 .container-fluid {
   clear:both;
 }
+.active {
+  color:#E6CC80;
+  font-weight: bold;
+}
+.active:hover {
+  text-decoration: none;
+  color:#E6CC80;
+  cursor: default;
+}
