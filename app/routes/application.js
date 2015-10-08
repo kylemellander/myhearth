@@ -6,10 +6,15 @@ export default Ember.Route.extend({
   },
   model() {
     var sessionId = this.get("session").content.uid;
-    return this.store.findRecord('user', sessionId);
+    return Ember.RSVP.hash({
+      user: this.store.findRecord('user', sessionId),
+      cards: this.store.findAll('card'),
+      decks: this.store.findAll('deck'),
+      carddecks: this.store.findAll('carddeck')
+    });
   },
   afterModel(model) {
-    return this.get('session').get('content').user = model;
+    return this.get('session').get('content').user = model.user;
   },
   actions: {
     signIn: function(provider) {

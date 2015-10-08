@@ -9,8 +9,8 @@ export default Ember.Component.extend({
   setCards: false,
   costCards: false,
   actions: {
-    addCard(card, user, join, count) {
-      this.sendAction('addCard', card, user, join, count);
+    addCard(card, user, count) {
+      this.sendAction('addCard', card, user, count);
     },
     all() {
       this.set('allCards', true);

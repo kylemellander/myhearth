@@ -2,22 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
   classNames: ['add-cards'],
-  click: function(e) {
+  click: function() {
     var card = this.get('card');
     var user = this.get('session').get('user');
-    var join = this.get('join');
     var count = 1;
-    this.sendAction('addCard', card, user, join, count);
+    this.sendAction('addCard', card, user, count);
   },
-  contextMenu: function(e) {
-    // if (e.which === 3) {
+  contextMenu: function() {
       var card = this.get('card');
       var user = this.get('session').get('user');
-      var join = this.get('join');
       var count = -1;
-      this.sendAction('addCard', card, user, join, count);
+      this.sendAction('addCard', card, user, count);
       return false;
-    // }
   },
   mouseMove: function(e) {
     this.$('.img-container').append('<img src="'+this.get('card').get('img')+'">')
