@@ -14,7 +14,7 @@ a.Legendary {
   color: #f07000;
 }
 a.Free {
-  color: #4b4b4b;
+  color: #8E8E8E;
 }
 .hover-image img{
   display:none;
@@ -25,4 +25,37 @@ a.Free {
 }
 .collection-card {
   text-align:center;
+}
+
+body {
+    background: url("http://www.hdwallpaper.nu/wp-content/uploads/2015/01/resolution_1920x1080.jpg") no-repeat center center fixed !important;
+    background-repeat:no-repeat;
+    background-size:cover;
+    padding:5rem 2rem;
+
+}
+
+/*body.ember-application {
+    background-image: url("http://www.hdwallpaper.nu/wp-content/uploads/2015/01/resolution_1920x1080.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    padding:5rem 2rem;
+
+}*/
+
+#title {
+  text-align: center;
+  color: white;
+}
+
+h4 {
+  color:#d3d3d3;
+}
+
+h3 {
+  color:#d3d3d3;
+}
+
+p{
+  color:#d3d3d3;
 }

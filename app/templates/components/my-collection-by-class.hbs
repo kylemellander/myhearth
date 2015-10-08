@@ -1,0 +1,6 @@
+{{yield}}
+
+<a {{action 'setClass' ''}}>Neutral</a> <a {{action 'setClass' 'Mage'}}>Mage</a> <a {{action 'setClass' 'Warlock'}}>Warlock</a> <a {{action 'setClass' 'Warrior'}}>Warrior</a> <a {{action 'setClass' 'Shaman'}}>Shaman</a> <a {{action 'setClass' 'Paladin'}}>Paladin</a> <a {{action 'setClass' 'Priest'}}>Priest</a> <a {{action 'setClass' 'Hunter'}}>Hunter</a> <a {{action 'setClass' 'Rogue'}}>Rogue</a> <a {{action 'setClass' 'Druid'}}>Druid</a>
+{{#each filteredCards as |card|}}
+  {{edit-collection-card session=session card=card join=user.card_users addCard="addCard"}}
+{{/each}}
