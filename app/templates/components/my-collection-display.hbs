@@ -1,4 +1,4 @@
-<a {{action 'test'}}>Toggle Display</a>
+<a {{action 'toggleDisplay'}}>Toggle Display</a>
 {{#if showAsTable}}
   {{#each join as |joinItem|}}
     {{my-collection-card-table addCard="addCard" join=join joinItem=joinItem session=session card=joinItem.card}}
@@ -7,7 +7,7 @@
 <div class="container-fluid">
   <p>Sort by: <a {{action 'all'}}>All</a> <a {{action 'class'}}>Class</a> <a {{action 'rarity'}}>Rarity</a> <a {{action 'set'}}>Set</a> <a {{action 'cost'}}>Cost</a></p>
   <div class="row">
-    {{#each filteredCards as |joinItem|}}
+    {{#each join as |joinItem|}}
       {{my-collection-card addCard="addCard" join=join joinItem=joinItem session=session card=joinItem.card}}
     {{/each}}
   </div>
