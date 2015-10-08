@@ -5,6 +5,7 @@
   {{/each}}
 {{else}}
 <div class="container-fluid">
+  <p>Sort by: <a {{action 'all'}}>All</a> <a {{action 'class'}}>Class</a> <a {{action 'rarity'}}>Rarity</a> <a {{action 'set'}}>Set</a> <a {{action 'cost'}}>Cost</a></p>
   <div class="row">
     {{#each filteredCards as |joinItem|}}
       {{my-collection-card addCard="addCard" join=join joinItem=joinItem session=session card=joinItem.card}}
