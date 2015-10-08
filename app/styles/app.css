@@ -65,3 +65,20 @@ p{
   float:left;
 
 }
+.card-count {
+  color:#fff;
+  font-weight:bold;
+  font-size: 1.5em;
+  border-bottom: 3px solid #E6CC80;
+  border-right: 3px solid #E6CC80;
+  border-left: 3px solid #E6CC80;
+  width: 40px;
+  height: 30px;
+  margin: -20px auto 0 auto;
+  border-bottom-right-radius: 0.7rem;
+  border-bottom-left-radius: 0.7rem;
+  background:rgba(0,0,0,0.8);
+}
+.container-fluid {
+  clear:both;
+}
