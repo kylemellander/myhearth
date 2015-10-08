@@ -6,7 +6,7 @@
     <div class="col-sm-9">
       <h3>My Collection</h3>
       {{cards-you-have session=session join=model.user.card_users}}
-      {{my-collection-display session=session join=model.user.card_users cards=model.cards user=model.user addCard="addCard"}}
+      {{my-collection-display session=session join=model.user.card_users cardusers=model.cardusers cards=model.cards user=model.user addCard="addCard"}}
     </div>
   </div>
 </div>
