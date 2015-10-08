@@ -1,6 +1,7 @@
 
 
 
+
   {{#if session.isAuthenticated}}
   <div id="signin">
     <img src="http://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/d/d4/Hearthstone_logo.png/350px-Hearthstone_logo.png?version=5853808a0ad41c9fccacef7bc3021e27" alt="" />
@@ -8,6 +9,7 @@
      <h4>Logged in as {{model.user.username}} <span {{action "signOut"}} class="glyphicon glyphicon-remove red"></span></h4>
     </div>
   </div>
+
 
   <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">

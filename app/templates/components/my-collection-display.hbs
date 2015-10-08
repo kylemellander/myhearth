@@ -1,15 +1,22 @@
-<a {{action 'toggleDisplay'}}>Toggle Display</a>
-{{#if showAsTable}}
-  {{#each join as |joinItem|}}
-    {{my-collection-card-table addCard="addCard" join=join joinItem=joinItem session=session card=joinItem.card}}
-  {{/each}}
-{{else}}
+<div class="sort-box">
+  <p>Sort by Set:
+  <a {{action 'setCardSet' ""}}>All</a> <a {{action 'setCardSet' "Classic"}}>Classic</a> <a {{action 'setCardSet' "Naxxramas"}}>Naxx</a> <a {{action 'setCardSet' "Goblins vs Gnomes"}}>GVG</a> <a {{action 'setCardSet' "Blackrock Mountain"}}>BRM</a> <a {{action 'setCardSet' "The Grand Tournament"}}>TGT</a></p>
+
+  <p>Sort by Class:
+  <a {{action 'setCardClass' "All"}}>All</a> <a {{action 'setCardClass' ""}}>Neutral</a> <a {{action 'setCardClass' "Druid"}}>Druid</a> <a {{action 'setCardClass' "Hunter"}}>Hunter</a> <a {{action 'setCardClass' "Mage"}}>Mage</a> <a {{action 'setCardClass' "Paladin"}}>Paladin</a> <a {{action 'setCardClass' "Priest"}}>Priest</a> <a {{action 'setCardClass' "Rogue"}}>Rogue</a> <a {{action 'setCardClass' "Shaman"}}>Shaman</a> <a {{action 'setCardClass' "Warlock"}}>Warlock</a> <a {{action 'setCardClass' "Warrior"}}>Warrior</a></p>
+</div>
+<div>
+  <form id="cardSearchField" class="form" role="search">
+    <div class="">
+      {{input value=cardSearch class="form-control" placeholder="Search Cards"}}
+    </div>
+  </form>
+</div>
 <div class="container-fluid">
-  <p>Sort by: <a {{action 'all'}}>All</a> <a {{action 'class'}}>Class</a> <a {{action 'rarity'}}>Rarity</a> <a {{action 'set'}}>Set</a> <a {{action 'cost'}}>Cost</a></p>
   <div class="row">
-    {{#each join as |joinItem|}}
-      {{my-collection-card addCard="addCard" join=join joinItem=joinItem session=session card=joinItem.card}}
+
+    {{#each filteredCards as |card|}}
+      {{my-collection-card addCard="addCard" join=join cardusers=cardusers session=session card=card}}
     {{/each}}
   </div>
 </div>
-{{/if}}
