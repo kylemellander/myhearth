@@ -9,6 +9,12 @@ export default Ember.Component.extend({
   setCards: false,
   costCards: false,
   actions: {
+    showDropdown: function() {
+      $('.dropdown-toggle').dropdown();
+      $(".dropdown-menu li a").click(function(){
+        $(this).parents(".dropdown").show('active');
+      });
+    },
     addCard(card, user, count) {
       this.sendAction('addCard', card, user, count);
     },

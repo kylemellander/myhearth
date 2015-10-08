@@ -1,4 +1,21 @@
-<a {{action 'setClass' ''}}>Neutral</a> <a {{action 'setClass' 'Mage'}}>Mage</a> <a {{action 'setClass' 'Warlock'}}>Warlock</a> <a {{action 'setClass' 'Warrior'}}>Warrior</a> <a {{action 'setClass' 'Shaman'}}>Shaman</a> <a {{action 'setClass' 'Paladin'}}>Paladin</a> <a {{action 'setClass' 'Priest'}}>Priest</a> <a {{action 'setClass' 'Hunter'}}>Hunter</a> <a {{action 'setClass' 'Rogue'}}>Rogue</a> <a {{action 'setClass' 'Druid'}}>Druid</a>
+
+<div class="dropdown">
+  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Sort by:
+  <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a {{action 'setClass' ''}}>Neutral</a></li>
+      <li><a {{action 'setClass' 'Mage'}}>Mage</a></li>
+      <li><a {{action 'setClass' 'Warlock'}}>Warlock</a></li>
+      <li><a {{action 'setClass' 'Warrior'}}>Warrior</a></li>
+      <li><a {{action 'setClass' 'Paladin'}}>Paladin</a></li>
+      <li><a {{action 'setClass' 'Priest'}}>Priest</a></li>
+      <li><a {{action 'setClass' 'Hunter'}}>Hunter</a></li>
+      <li><a {{action 'setClass' 'Rogue'}}>Rogue</a></li>
+      <li><a {{action 'setClass' 'Druid'}}>Druid</a></li>
+    </ul>
+</div>
+
+
 {{#each filteredCards as |card|}}
   {{edit-collection-card session=session card=card join=cardusers addCard="addCard"}}
 {{/each}}

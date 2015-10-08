@@ -46,6 +46,8 @@ body {
 #title {
   text-align: center;
   color: white;
+  width:50%;
+  margin:0 auto;
 }
 
 h4 {
@@ -60,11 +62,46 @@ p{
   color:#d3d3d3;
 }
 
+
+#cardlist {
+  background-color: rgba(64, 64, 64, 0.9);
+  margin: 1%;
+  width: 28%;
+}
+
+#mycollection {
+  background-color: rgba(64, 64, 64, 0.9);
+  width: 62%;
+  margin: 1%;
+}
+
+#signin {
+  text-align:center;
+  margin-left:169.094px;
+}
+
+#login{
+  float:right;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#home-button{
+  font-size: 1.2em;
+}
+
+#remove-glyphicon {
+  background-color:red;
+}
+
+.red {
+  color:red;
+}
+
 #cardSearchField {
   width:20%;
   float:left;
-
 }
+
 .card-count {
   color:#fff;
   font-weight:bold;

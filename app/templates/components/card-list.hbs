@@ -1,13 +1,28 @@
 <h3>All Cards</h3>
-<p>Sort by: <a {{action 'all'}}>All</a> <a {{action 'class'}}>Class</a> <a {{action 'rarity'}}>Rarity</a> <a {{action 'set'}}>Set</a> <a {{action 'cost'}}>Cost</a></p>
-{{#if classCards}}
-  {{card-list-by-class session=session cards=sortedCards cardusers=cardusers user=user addCard="addCard"}}
-{{else if allCards}}
-  {{card-list-all session=session cards=sortedCards cardusers=cardusers user=user addCard="addCard"}}
-{{else if rarityCards}}
-  {{card-list-by-rarity session=session cards=sortedCards cardusers=cardusers user=user addCard="addCard"}}
-{{else if setCards}}
-  {{card-list-by-set session=session cards=sortedCards cardusers=cardusers user=user addCard="addCard"}}
-{{else if costCards}}
-  {{card-list-by-cost session=session cards=sortedCards cardusers=cardusers user=user addCard="addCard"}}
-{{/if}}
+
+
+<div class="dropdown">
+  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown">Sort by:
+  <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a {{action 'all'}}>All</a></li>
+      <li><a {{action 'class'}} >Class</a></li>
+      <li><a {{action 'rarity'}}>Rarity</a></li>
+      <li><a {{action 'cost'}}>Cost</a></li>
+      <li><a {{action 'set'}}>Set</a></li>
+    </ul>
+</div>
+
+<br>
+
+    {{#if classCards}}
+      {{card-list-by-class session=session cards=sortedCards user=user addCard="addCard"}}
+    {{else if allCards}}
+      {{card-list-all session=session cards=sortedCards user=user addCard="addCard"}}
+    {{else if rarityCards}}
+      {{card-list-by-rarity session=session cards=sortedCards user=user addCard="addCard"}}
+    {{else if setCards}}
+      {{card-list-by-set session=session cards=sortedCards user=user addCard="addCard"}}
+    {{else if costCards}}
+      {{card-list-by-cost session=session cards=sortedCards user=user addCard="addCard"}}
+    {{/if}}
