@@ -11,9 +11,6 @@ export default Ember.Component.extend({
   actions: {
     showDropdown: function() {
       $('.dropdown-toggle').dropdown();
-      $(".dropdown-menu li a").click(function(){
-        $(this).parents(".dropdown").show('active');
-      });
     },
     addCard(card, user, count) {
       this.sendAction('addCard', card, user, count);
@@ -43,6 +40,13 @@ export default Ember.Component.extend({
       this.set('rarityCards', false);
       this.set('setCards', false);
       this.set('costCards', true);
+    },
+    selectOption() {
+      $(".dropdown-menu li a").click(function(){
+        debugger;
+        $(this).parents('.dropdown').find('.dropdown-menu li a').text($(this).text());
+        $(this).parents(".dropdown").find('.dropdown-menu li a').val($(this).text());
+      });
     }
   }
 });
