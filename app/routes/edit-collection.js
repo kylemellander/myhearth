@@ -6,7 +6,8 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       cards: this.store.findAll('card'),
       user: user,
-      cardusers: this.get('cardusers')
+      cardusers: this.get('cardusers'),
+      session: this.get('session')
     });
   },
   actions: {

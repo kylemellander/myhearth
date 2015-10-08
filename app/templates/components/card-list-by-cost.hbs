@@ -1,4 +1,4 @@
 <a {{action 'setCost' 0}}>0</a> <a {{action 'setCost' 1}}>1</a> <a {{action 'setCost' 2}}>2</a> <a {{action 'setCost' 3}}>3</a> <a {{action 'setCost' 4}}>4</a> <a {{action 'setCost' 5}}>5</a> <a {{action 'setCost' 6}}>6</a> <a {{action 'setCost' 7}}>7+</a>
 {{#each filteredCards as |card|}}
-  {{edit-collection-card session=session card=card join=user.card_users addCard="addCard"}}
+  {{edit-collection-card session=session card=card join=cardusers addCard="addCard"}}
 {{/each}}

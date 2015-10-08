@@ -1,13 +1,13 @@
 <h3>All Cards</h3>
 <p>Sort by: <a {{action 'all'}}>All</a> <a {{action 'class'}}>Class</a> <a {{action 'rarity'}}>Rarity</a> <a {{action 'set'}}>Set</a> <a {{action 'cost'}}>Cost</a></p>
 {{#if classCards}}
-  {{card-list-by-class session=session cards=sortedCards user=user addCard="addCard"}}
+  {{card-list-by-class session=session cards=sortedCards cardusers=cardusers user=user addCard="addCard"}}
 {{else if allCards}}
-  {{card-list-all session=session cards=sortedCards user=user addCard="addCard"}}
+  {{card-list-all session=session cards=sortedCards cardusers=cardusers user=user addCard="addCard"}}
 {{else if rarityCards}}
-  {{card-list-by-rarity session=session cards=sortedCards user=user addCard="addCard"}}
+  {{card-list-by-rarity session=session cards=sortedCards cardusers=cardusers user=user addCard="addCard"}}
 {{else if setCards}}
-  {{card-list-by-set session=session cards=sortedCards user=user addCard="addCard"}}
+  {{card-list-by-set session=session cards=sortedCards cardusers=cardusers user=user addCard="addCard"}}
 {{else if costCards}}
-  {{card-list-by-cost session=session cards=sortedCards user=user addCard="addCard"}}
+  {{card-list-by-cost session=session cards=sortedCards cardusers=cardusers user=user addCard="addCard"}}
 {{/if}}

@@ -10,7 +10,8 @@ export default Ember.Route.extend({
       user: this.store.findRecord('user', sessionId),
       cards: this.store.findAll('card'),
       decks: this.store.findAll('deck'),
-      carddecks: this.store.findAll('carddeck')
+      carddecks: this.store.findAll('carddeck'),
+      cardusers: this.store.findAll('carduser')
     });
   },
   afterModel(model) {
