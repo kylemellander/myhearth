@@ -1,5 +1,8 @@
 {{#if session.isAuthenticated}}
 <p>You are Signed In!</p>
+<div id="index-image">
+  <img src="assets/images/spin.gif">
+</div>
 <p>{{#link-to 'index'}}Go Home{{/link-to}}</p>
 {{else}}
 <form>

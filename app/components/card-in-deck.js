@@ -8,7 +8,14 @@ export default Ember.Component.extend({
     var carduser = cardusers.get('content').filter(function(cardUser) {
       return cardUser.get('card').get('id') === card.get('id');
     });
-    return carduser[0].get('count');
+    if (carduser[0] === undefined) {
+      return 0;
+    } else {
+      return carduser[0].get('count');
+    }
+  }),
+  enough: Ember.computed('carddeck', 'youHave', 'cards', function(){
+    return this.get('youHave') >= this.get('carddeck').get('count');
   }),
   actions: {
     test(card) {

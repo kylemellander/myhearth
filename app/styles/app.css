@@ -162,6 +162,9 @@ p{
   width: 50%;
   margin: 0 auto;
 }
+#index-image img{
+  border-radius:20px;
+}
 .active {
   color:#E6CC80 !important;
   font-weight: bold;
@@ -173,4 +176,7 @@ p{
 }
 .deck-list-item {
   color: #fff !important;
+}
+.green {
+  color: green;
 }
