@@ -1,19 +1,18 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  // youHave: Ember.computed(function(){
-  //   var user = this.get('session').get('content').user;
-  //   var cardUser = user.get('card_users').filterBy('card', this.get('join').get('card'));
-  //   var count;
-  //   debugger;
-  //   if(cardUser.count === 1) {
-  //     count = 1;
-  //   } else if(cardUser.get('count') === 2){
-  //     count = 2;
-  //   } else {
-  //     count = 0;
-  //   };
-  //   return count;
-  // }),
-
+  youHave: Ember.computed('carddeck', function() {
+    var self = this;
+    var card = this.get('cards').filter(function(card) {return card.get('id') === self.get('carddeck').get('card').get('id')})[0];
+    var cardusers = this.get('session').get('user').get('card_users');
+    var carduser = cardusers.get('content').filter(function(cardUser) {
+      return cardUser.get('card').get('id') === card.get('id');
+    });
+    return carduser[0].get('count');
+  }),
+  actions: {
+    test(card) {
+      debugger;
+    }
+  }
 });

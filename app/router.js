@@ -11,6 +11,7 @@ Router.map(function() {
   this.route('scrap');
   this.route('view-decks', {});
   this.route('deck', {path: '/deck/:deck_id'});
+  this.route('view-deck', {path: '/view-deck/:deck_id'});
 });
 
 export default Router;

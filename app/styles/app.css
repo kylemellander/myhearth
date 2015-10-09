@@ -160,7 +160,7 @@ p{
 #index-image {
   width: 50%;
   margin: 0 auto;
-
+}
 .active {
   color:#E6CC80 !important;
   font-weight: bold;
@@ -169,4 +169,7 @@ p{
   text-decoration: none;
   color:#E6CC80;
   cursor: default;
+}
+.deck-list-item {
+  color: #fff !important;
 }

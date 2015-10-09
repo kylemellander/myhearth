@@ -1,4 +1,4 @@
-{{#each model as |deck|}}
-  {{deck-load deck=deck}}
+{{#each model.decks as |deck|}}
+  {{deck-load deck=deck cardusers=model.cardusers cards=model.cards carddecks=model.carddecks}}
 {{/each}}
 <a {{action 'test' model}}>test</a>
