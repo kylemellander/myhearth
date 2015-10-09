@@ -27,6 +27,8 @@ a.Free {
   text-align:center;
 }
 
+.collection-card .img-responsive {
+}
 body {
     background: url('/assets/images/background.jpg') no-repeat center center fixed !important;
     background-repeat:no-repeat;
