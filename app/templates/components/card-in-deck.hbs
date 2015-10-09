@@ -1,5 +1,9 @@
-<li class="deck-list-item"><div>{{carddeck.card.name}} x {{carddeck.count}} - You have: {{youHave}}
-
+<li class="deck-list-item"><div>{{carddeck.card.name}} x {{carddeck.count}} - You have:
+  {{#if enough}}
+  <span class="green">{{youHave}}</span>
+  {{else}}
+  <span class="red">{{youHave}}</span>
+  {{/if}}
 {{#if enough}}
 <span class="glyphicon glyphicon-ok green" aria-hidden="true"></span>
 {{/if}}

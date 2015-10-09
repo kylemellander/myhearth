@@ -103,7 +103,7 @@ p{
 }
 
 .red {
-  color:red;
+  color:#FF5050;
 }
 
 #cardSearchField {
@@ -220,6 +220,8 @@ p{
 }
 #index-image img{
   border-radius:20px;
+  width: 100%;
+  height: auto;
 }
 .active {
   color:#E6CC80 !important;
@@ -234,7 +236,7 @@ p{
   color: #fff !important;
 }
 .green {
-  color: green;
+  color: #CCFF99;
 }
 
 #card-stats {
@@ -248,6 +250,22 @@ p{
   text-align: center;
   width: 75%;
   margin: 0 auto;
+}
+
+#individual-deck {
+  color: #fff;
+  background-color: rgba(64, 64, 64, .85);
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#individual-deck ul {
+  padding-left: 0;
+}
+
+#individual-deck li {
+  list-style: none;
 }
 
 #deck-display a {

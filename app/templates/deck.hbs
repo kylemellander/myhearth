@@ -1,6 +1,8 @@
-<h3>{{model.deck.name}}</h3>
-<ul class="deck-list">
-  {{#each model.deck.carddecks as |carddeck|}}
-    {{card-in-deck carduser=model.carduser carddeck=carddeck deck=model.deck session=session user=user cards=model.cards}}
-  {{/each}}
-</ul>
+<div id="individual-deck">
+  <h3>{{model.deck.name}}</h3>
+  <ul class="deck-list">
+    {{#each model.deck.carddecks as |carddeck|}}
+      {{card-in-deck carduser=model.carduser carddeck=carddeck deck=model.deck session=session user=user cards=model.cards}}
+    {{/each}}
+  </ul>
+</div>

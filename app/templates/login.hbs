@@ -1,3 +1,12 @@
+
 <div id="login-form">
   {{login-form addUser="addUser" login="login" session=session}}
 </div>
+
+<hr style="width:30%;">
+
+{{#if session.isAuthenticated}}
+<div id="index-image">
+  <img src="assets/images/spin.gif">
+</div>
+{{/if}}
