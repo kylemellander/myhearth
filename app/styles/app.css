@@ -76,11 +76,12 @@ p{
 
 #signin {
   text-align:center;
-  margin-left:209.094px;
 }
 
 #login{
   float:right;
+  position: absolute;
+  right: 10px;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
