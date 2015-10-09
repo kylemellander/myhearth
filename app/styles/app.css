@@ -28,10 +28,11 @@ a.Free {
 }
 
 body {
-    background: url("http://www.hdwallpaper.nu/wp-content/uploads/2015/01/resolution_1920x1080.jpg") no-repeat center center fixed !important;
+    background: url('/assets/images/background.jpg') no-repeat center center fixed !important;
     background-repeat:no-repeat;
     background-size:cover;
     padding:5rem 2rem;
+    font-family: 'Quicksand', sans-serif;
 
 }
 
@@ -64,29 +65,37 @@ p{
 
 
 #cardlist {
-  background-color: rgba(80, 80, 80, 0.7);
+  background-color: rgba(64, 64, 64, 0.85);
+  border-right: 1px ridge #fff;
+
 }
 
 #mycollection {
-  background-color: rgba(64, 64, 64, 0.5);
+  background-color: rgba(64, 64, 64, 0.85);
+  padding-bottom: 3em;
 }
+
 #mycollection a {
   color: #fff;
 }
 
 #signin {
-  text-align:center;
+  margin: 2em auto;
+  text-align: center;
 }
 
+
 #login{
-  float:right;
-  position: absolute;
-  right: 10px;
+  color: white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  display: inline;
+  width: 15%;
+  position: absolute;
+  margin-top: 1.25em;
 }
 
 #home-button{
-  font-size: 1.2em;
+  font-size: 1.4em;
 }
 
 #remove-glyphicon {
@@ -114,7 +123,7 @@ p{
   margin: -20px auto 0 auto;
   border-bottom-right-radius: 0.7rem;
   border-bottom-left-radius: 0.7rem;
-  background:rgba(0,0,0,0.8);
+  background-color: rgba(64, 64, 64, 0.85);
 }
 .container-fluid {
   clear:both;
@@ -125,23 +134,70 @@ p{
 }
 
 #login-home a {
-  color:black;
+  color:white;
 }
 
 #sign-in-buttons{
   text-align:center;
 }
 
-#login-header {
+.login-header {
   text-align:center;
   color:white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-weight: bold;
 }
 
 #email {
   text-align:center;
   color:white;
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#username {
+  text-align:center;
+  color:white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#username input {
+  color: black;
+}
+
+#login-form {
+  background-color: rgba(64, 64, 64, 0.5);
+  width: 25%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+#signed-in {
+  text-align: center;
+  width:25%;
+  margin: 0 auto;
+  color: #fff;
+  display: inline;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#signed-in h4 {
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  padding: 3%;
+  margin-top: 3%;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#signed-in a {
+  color: #fff;
+  text-align: center;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+#signed-in a:hover{
+  text-decoration: underline;
+  color: #337ab7;
 }
 
 #email input {
@@ -159,8 +215,8 @@ p{
 }
 
 #index-image {
-  width: 50%;
   margin: 0 auto;
+  width: 30%;
 }
 #index-image img{
   border-radius:20px;
@@ -179,4 +235,36 @@ p{
 }
 .green {
   color: green;
+}
+
+#card-stats {
+  padding: 1% 2.5%;
+  text-align: left;
+}
+
+#deck-display {
+  color: #fff;
+  background-color: rgba(64, 64, 64, .85);
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+}
+
+#deck-display a {
+  color: #fff;
+  text-align: center;
+  /*text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;*/
+}
+
+#deck-display a:hover {
+  color: #337ab7;
+  text-decoration: underline;
+}
+
+.dropdown button {
+  margin: 5px;
+}
+
+.section-headers {
+  font-weight: bold;
 }

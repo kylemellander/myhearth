@@ -1,7 +1,5 @@
   {{#if session.isAuthenticated}}
-    <div id="login">
-     <h4>Logged in as {{model.user.username}} <span {{action "signOut"}} class="glyphicon glyphicon-remove red"></span></h4>
-    </div>
+
   <div id="signin">
     <img src="http://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/d/d4/Hearthstone_logo.png/350px-Hearthstone_logo.png?version=5853808a0ad41c9fccacef7bc3021e27" alt="" />
   </div>
@@ -23,6 +21,9 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li>{{#link-to 'index'}}<span id="home-button"class="glyphicon glyphicon-home" aria-hidden="true"></span>{{/link-to}}</li>
+        <div id="login">
+        <li>Logged in as {{model.user.username}} <span {{action "signOut"}} class="glyphicon glyphicon-remove red"></span></li>
+        </div>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
@@ -38,7 +39,7 @@
 <div id='not-logged-in'>
   <img src="http://hydra-media.cursecdn.com/hearthstone.gamepedia.com/thumb/d/d4/Hearthstone_logo.png/350px-Hearthstone_logo.png?version=5853808a0ad41c9fccacef7bc3021e27" alt="" />
   <br>
-  <div id="login-home"><button btn-warning>{{#link-to 'login'}}Login/Sign-Up{{/link-to}}</button></div>
+  <div id="login-home"><button class="btn btn-warning">{{#link-to 'login'}}Login/Sign-Up{{/link-to}}</button></div>
 </div>
 {{/if}}
 
