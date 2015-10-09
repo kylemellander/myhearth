@@ -28,7 +28,7 @@ a.Free {
 }
 
 body {
-    background: url("http://www.hdwallpaper.nu/wp-content/uploads/2015/01/resolution_1920x1080.jpg") no-repeat center center fixed !important;
+    background: url('/assets/images/background.jpg') no-repeat center center fixed !important;
     background-repeat:no-repeat;
     background-size:cover;
     padding:5rem 2rem;
