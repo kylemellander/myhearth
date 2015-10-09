@@ -1,4 +1,7 @@
-{{#each model as |deck|}}
-  {{deck-load deck=deck}}
-{{/each}}
-<a {{action 'test' model}}>test</a>
+<div id="deck-display">
+<h3>Popular Decks:</h3>
+  {{#each model.decks as |deck|}}
+    {{deck-load deck=deck cardusers=model.cardusers cards=model.cards carddecks=model.carddecks}}
+  {{/each}}
+  <a {{action 'test' model}}>test</a>
+</div>
